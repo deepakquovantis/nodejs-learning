@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-learning",
+  "version": "1.0.0",
+  "description": "This package is containing multiple practical examples with basic understanding of javascript",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakquovantis/nodejs-learning.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "code-snippet"
+  ],
+  "author": "deepak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakquovantis/nodejs-learning/issues"
+  },
+  "homepage": "https://github.com/deepakquovantis/nodejs-learning#readme"
+}
