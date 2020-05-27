@@ -38,7 +38,7 @@ function checkStatus(travese) {
                 }
             }
 
-            //TODO:// This can be done more dianamically
+            //TODO:// This can be done more dynamically
             if (travese == 'diagonally') {
                 if (i == j && j == 2 && arr[i - 1][j - 1] == arr[0][0] && arr[i][j] == arr[0][0]) {
                     count = 3;

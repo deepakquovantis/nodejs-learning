@@ -48,7 +48,7 @@ class TicTacToe extends baseGame {
                     }
                 }
 
-                //TODO:// This can be done more dianamically
+                //TODO:// This can be done more dynamically
                 if (travese == 'diagonally') {
                     if (i == j && j == 2 && this.arr[i - 1][j - 1] == this.arr[0][0] && this.arr[i][j] == this.arr[0][0]) {
                         count = 3;
