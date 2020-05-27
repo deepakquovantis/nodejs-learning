@@ -1,6 +1,6 @@
-//TODO:// the following conditions can be further added
+//TODO:// The following features can be added further
 // 1- Game over
-// 2- Game level
+// 2- Game levels
 // 3- Play with computer
 
 let arr =
@@ -10,13 +10,13 @@ let arr =
         ['x', 'x', 'x']
     ];
 
-function checkStatus(travese) {
+function checkStatus(traverse) {
     for (let i = 0; i < arr.length; i++) {
         let prev = undefined;
         let count = 0;
         for (let j = 0; j < arr[i].length; j++) {
 
-            if (travese == 'vertically') {
+            if (traverse == 'vertically') {
                 if (prev === undefined) {
                     prev = arr[i][j];
                     count = 1;
@@ -26,7 +26,7 @@ function checkStatus(travese) {
                     count++;
                 }
             }
-            if (travese == 'horizontally') {
+            if (traverse == 'horizontally') {
                 if (prev === undefined) {
                     prev = arr[j][i];
                     count = 1;
@@ -39,7 +39,7 @@ function checkStatus(travese) {
             }
 
             //TODO:// This can be done more dynamically
-            if (travese == 'diagonally') {
+            if (traverse == 'diagonally') {
                 if (i == j && j == 2 && arr[i - 1][j - 1] == arr[0][0] && arr[i][j] == arr[0][0]) {
                     count = 3;
                 }
@@ -49,7 +49,7 @@ function checkStatus(travese) {
             }
         }
         if (count == 3) {
-            return { isSuccess: true, fromIndex: i, traveseDirection: travese };
+            return { isSuccess: true, fromIndex: i, traveseDirection: traverse };
         }
     }
     return {isSuccess: false};
@@ -57,8 +57,8 @@ function checkStatus(travese) {
 
 
 function play() {
-    let travese = ['vertically', 'horizontally', 'diagonally'];
-    travese.forEach(element => {
+    let traverse = ['vertically', 'horizontally', 'diagonally'];
+    traverse.forEach(element => {
         let status = checkStatus(element);
         if (status.isSuccess) {
             console.log('Game completed ' + status.traveseDirection + ' from index ' + status.fromIndex);

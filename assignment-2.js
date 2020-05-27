@@ -1,6 +1,6 @@
-//TODO:// the following conditions can be further added
+//TODO:// The following features can be added further
 // 1- Game over
-// 2- Game level
+// 2- Game levels
 // 3- Play with computer
 
 class baseGame {
@@ -20,13 +20,13 @@ class TicTacToe extends baseGame {
             ['x', 'x', 'x']
         ];
 
-    checkStatus(travese) {
+    checkStatus(traverse) {
         for (let i = 0; i < this.arr.length; i++) {
             let prev = undefined;
             let count = 0;
             for (let j = 0; j < this.arr[i].length; j++) {
 
-                if (travese == 'vertically') {
+                if (traverse == 'vertically') {
                     if (prev === undefined) {
                         prev = this.arr[i][j];
                         count = 1;
@@ -36,7 +36,7 @@ class TicTacToe extends baseGame {
                         count++;
                     }
                 }
-                if (travese == 'horizontally') {
+                if (traverse == 'horizontally') {
                     if (prev === undefined) {
                         prev = this.arr[j][i];
                         count = 1;
@@ -49,7 +49,7 @@ class TicTacToe extends baseGame {
                 }
 
                 //TODO:// This can be done more dynamically
-                if (travese == 'diagonally') {
+                if (traverse == 'diagonally') {
                     if (i == j && j == 2 && this.arr[i - 1][j - 1] == this.arr[0][0] && this.arr[i][j] == this.arr[0][0]) {
                         count = 3;
                     }
@@ -59,7 +59,7 @@ class TicTacToe extends baseGame {
                 }
             }
             if (count == 3) {
-                return { isSuccess: true, fromIndex: i, traveseDirection: travese };
+                return { isSuccess: true, fromIndex: i, traveseDirection: traverse };
             }
 
         }
@@ -67,8 +67,8 @@ class TicTacToe extends baseGame {
     }
 
     play() {
-        let travese = ['vertically', 'horizontally', 'diagonally'];
-        travese.forEach(element => {
+        let traverse = ['vertically', 'horizontally', 'diagonally'];
+        traverse.forEach(element => {
             let status = this.checkStatus(element);
             if (status.isSuccess) {
                 console.log('Game completed ' + status.traveseDirection + ' from index ' + status.fromIndex);
