@@ -15,9 +15,9 @@ class TicTacToe extends baseGame {
     }
     arr =
         [
-            [1, 1, 1],
-            [1, 1, 1],
-            [1, 1, 1]
+            ['', '', '0'],
+            ['', '', '0'],
+            ['x', 'x', 'x']
         ];
 
     checkStatus(travese) {
@@ -61,7 +61,9 @@ class TicTacToe extends baseGame {
             if (count == 3) {
                 return { isSuccess: true, fromIndex: i, traveseDirection: travese };
             }
+
         }
+        return { isSuccess: false };
     }
 
     play() {
